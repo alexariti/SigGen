@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+</head>
+    
+
+<body>
+  <style>
+    input, select {margin-left: 50px; }
+    
+    input {width: 350px;}
+      
+      * {font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif};
+    
+    </style>
+    
+  
+  <h3>How to use this email signature generator</h3>
+    <p>Please enter your details and press "Submit". Then copy and paste the email signature below into a new signature.</p>
+<p>For desktop, go to File - Options - Mail - Signatures.</p>
+<p>For outlook.office365.com click on the settings cog in the top navigation bar, then "View all outlook settings" then "Compose and reply" </p><br>
+    
+  <h3>Your details:</h3>
+<form>
+    
+<label for = "fullname">Full Name: </label><input type="text" id = "fullname" value = "Your name"><br><br>
+    <label for = "role">Role: </label><input type="text" id = "role" value = "Your role"><br><br>
+<label for = "phone">Phone: </label><input type="text" id = "phone" value = "+61 2 9262 6989"><br><br>
+    
+<label for = "streetaddress">Address: </label><input type="text" id = "streetaddress" value = "Suite 8.02, 6 O'Connell St, Sydney 2000"><br><br>
+    
+    <label for = "email">Email: </label><input type="text" id = "email" value = "youremail@edo.org.au"><br><br>
+    
+    <label for = "other">Other</label>
+    
+    
+    <select id = "other" onchange = "otherFunc()">
+    
+    <option id = "mobile">Mobile</option>
+    <option id = "none">None</option>
+    <option id = "fax" >Fax</option>
+    
+    </select>        <br><br>
+    
+    <div id = "faxBox" style = "display:none;">
+    <label for = "otherFax" >Fax: </label><input type="text" id = "faxInput" value = "+61 2 9264 2414" ><br><br></div>
+    
+    <div id = "mobileBox" >
+    <label for = "otherMobile" >Mobile: </label><input type="text" id = "mobileInput" value = "0400 000 000">
+
+        <br><br></div>
+    
+    
+<label for = "workdayselect">Days Worked</label>
+    <select id = "workdayselect" onchange = "workdayFunc()">
+        <option id = "fulltime">I work Mon-Fri</option>
+    <option id = "parttime">I only work some days</option>
+        
+    </select>        
+<br> <br>
+    
+
+<div id = "workdaysbox" style = "display:none;">
+<input class = "daycheck" type="checkbox" name="workday" value="Mon" style = "width: 30px;"/> Mon <br>
+<input class = "daycheck" type="checkbox" name="workday" value="Tue" style = "width: 30px;"/> Tue<br>
+<input class = "daycheck" type="checkbox" name="workday" value="Wed" style = "width: 30px;"/> Wed<br>
+<input class = "daycheck" type="checkbox" name="workday" value="Thu" accept=""style = "width: 30px;" /> Thu<br>
+<input class = "daycheck" type="checkbox" name="workday" value="Fri" style = "width: 30px;" /> Fri<br><br><br>
+        
+    </div>
+    
+    
+   
+    
+    
+    <div id = "pronounBox">
+        <p>Would you like to specify a pronoun in your signature? <a href = "https://lgbt.ucsf.edu/signature-samples" style = "font-size: 8pt" target = "_blank">Learn more</a></p> 
+    <input class = "pronounselect" type = "checkbox" name = "pronoun" value = "she/her" style = "width: 30px;"/>She/her<br>
+    <input class = "pronounselect" type = "checkbox" name = "pronoun" value = "he/his" style = "width: 30px;"/>He/his<br>
+    <input class = "pronounselect" type = "checkbox" name = "pronoun" value = "they/their" style = "width: 30px;"/>They/their<br>
+    <!-- input class = "pronounselect" type = "checkbox" name = "pronoun" value = "noPronoun" style = "width: 30px;"/>I prefer not to specify in my email signature<br
+    <div class = "pronounAppear" style = "display:none;">
+    <p>How it will appear in your signature:</p>
+    <p style = "font-weight: bold; font-size: 8pt">I use <span class = "pronounSelected"></span> pronouns.</p> 
+        </div>-->
+    </div>
+
+    
+    <script> 
+    
+    var myPronouns = ""
+    
+    
+    $(".pronounselect").change(function(){ 
+    
+
+        
+    if (this.value != "noPronoun" && $('input.pronounselect').is(':checked')) {
+        
+    
+     var myPronouns = $.map($(':checkbox[name=pronoun]:checked'), function(n, i){
+      return n.value;
+}).join(' & ');    
+     
+        
+    $(".pronounSelected").text(myPronouns);
+        $(".pronounAppear").show();
+        
+    }
+        
+    else {
+     myPronouns = ""
+      $(".pronounAppear").hide();  
+        
+    }    
+        
+    }
+        
+        
+        
+        )
+    
+    
+    </script>
+    
+    
+    
+
+    <div type="submit" id = "formSubmit" style = "border: 1px solid black; text-align: center;width:200px;cursor: pointer; margin-top: 20px;">Submit</div>
+   
+    
+    </form>    
+    
+        <br>
+
+
+
+    
+    
+<h3>Full signature:</h3>
+<table style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;width: 400px; padding: 0px; margin:0px; margin-left:10px;" cellpadding = "0" width = "400" cellspacing = "0" >
+      <tr>    <td width = "110" style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;width:110px; padding-right: 10px; border-right: 3px solid #39CEA6;">
+               <img src = "https://www.edo.org.au/wp-content/uploads/2020/09/EDO_Full-Logo-Stacked_Charcoal_96dpi.png"  style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif; width:100px; height:93px; max-width: 100px; max-height:93px; min-width: 100px; min-height: 93px;" width = "100" height = "93" >
+                
+
+
+<td style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;width: 250px; padding-left: 15px;" width = "250"> 
+    <p style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif; font-size: 10pt; padding:0px; margin:0px; margin-bottom: 2px; line-height:12pt; font-weight : bold;" class = "name-and-role"><b>Jane Smith &mdash; Solicitor</b></p>
+<p style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif; font-size: 10pt; padding:0px; margin:0px; margin-bottom: 2px; line-height:12pt; font-weight : normal;" class = "days">(Mon, Wed, Fri)</p>
+
+               <p style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif; font-size: 10pt; padding:0px; margin:0px;" class = "street-address">Suite 8.02, 6 O'Connell St, Sydney 2000</p>
+               <p style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif; font-size: 10pt; padding:0px; margin:0px;"><span style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;" class = "phone-number">P: +61 2 9262 6989   </span></p>
+<p style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif; font-size: 10pt; padding:0px; margin:0px;">               
+                   
+                   <span style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;" class = "other-number">F: +61 2 9264 2414</span></p>
+               <p style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif; font-size: 10pt; padding:0px; margin:0px;"><span>E: <a href="/cdn-cgi/l/email-protection#660c07080348150b0f120e2603020948091401480713" style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;color:#46B1CE; text-decoration: none !important; text-decoration: none;" class = "email-thing-outer"><strong class = "email-thing" style = "font-weight:normal; text-decoration: none!; text-decoration: none;"><span class="__cf_email__" data-cfemail="3b515a555e154856524f537b5e5f541554495c155a4e">[email&#160;protected]</span></strong></a></span> 
+                </p>
+            
+            </td>
+    </tr>  </table> 
+ <table style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;width: 400px; margin: 0px 10px; padding: 0px" cellpadding = "0" width = "400" cellspacing = "0" > 
+  
+         <tr height = "20" style = "height:20px" ></tr>
+     <tr style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;width: 400px; margin: 0px; padding: 0px; display:none;" cellpadding = "0" width = "400" cellspacing = "0" class = "pronounAppear">
+    <td style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;width: 400px; padding: 0px 0px 0px 0px;margin:0px ;" cellpadding = "0" width = "400" cellspacing = "0">
+  <p style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif; font-size: 10pt; margin: 0px 0px 0px 0px; padding:0px;">
+  I use <span class = "pronounSelected">she/her</span> pronouns.
+</p>
+</td>
+
+
+    </tr> 
+             <tr height = "10" style = "height:10px" ></tr>
+<tr style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;width: 400px; margin: 10px 0px 0px 0px; padding: 0px" cellpadding = "0" width = "400" cellspacing = "0">
+    <td style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;width: 400px; margin: 0px; padding: 0px" cellpadding = "0" width = "600" cellspacing = "0">
+       
+  <p style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif; font-size: 10pt; margin: 00px 0px 0px 0px; padding:0px;">
+    <a href = "https://www.edo.org.au/donate" style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;color:#46B1CE; text-decoration: none !important;"><strong style = "text-decoration:none;">DONATE</strong></a> – You can support EDO by making a tax-deductible donation today.
+</p>
+</td>
+
+
+    </tr> 
+  
+
+       
+     <tr height = "10" style = "height:10px" ></tr>
+     
+    <tr style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;width: 400px; margin: 0px; padding: 0px" cellpadding = "0" width = "400" cellspacing = "0">
+    <td style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;width: 400px; margin: 0px; padding: 0px" cellpadding = "0" width = "400" cellspacing = "0">
+        <p style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif; font-size: 8pt; margin: 0px 0px 0px 0px;; padding:0px;">
+            This email and any attachments are confidential. If you are not the intended recipient you must not disseminate, distribute or copy it. If you have received this email by mistake please notify us immediately at <a href="/cdn-cgi/l/email-protection#d8b1b6beb798bdbcb7f6b7aabff6b9ad" style = "text-decoration: none !important; font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;color:#46B1CE;"><strong style = "font-weight:normal; text-decoration:none;"><span class="__cf_email__" data-cfemail="2f464149406f4a4b4001405d48014e5a">[email&#160;protected]</span></strong></a> and delete this email.
+        </p></td>
+    </tr>      
+     <tr height = "10" style = "height:10px" ></tr>
+<tr style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;width: 400px; margin: 0px; padding: 0px;" cellpadding = "0" width = "400" cellspacing = "0">
+       <td style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;width: 400px; margin: 0px; padding: 0px" cellpadding = "0" width = "400" cellspacing = "0"><p style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif; font-size: 8pt; margin: 0px 0px 0px 0px; padding:0px;"><i>
+           EDO recognises the traditional owners and custodians of the land, seas and rivers of Australia. We pay our respects to Aboriginal and Torres Strait Islander elders past and present, and aspire to learn from traditional knowledge and customs so that, together, we can protect our environment and cultural heritage through law.</i></p></td>
+    </tr>
+           
+           </table>
+    <br>
+    <h3>Short signature for replies (optional):</h3>     
+    
+     <p style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif; font-size: 10pt; padding:0px; margin:0px; margin-bottom: 2px; line-height:12pt; font-weight : bold"><span id = "short-name">Jane Smith</span><span style = "color:#39CEA6"> | </span><span id = "short-role">Solicitor</span><span style = "color:#39CEA6"> | </span><span id = "short-org">EDO</span></p>
+    <p style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif; font-size: 10pt; padding:0px; margin:0px; margin-bottom: 2px; line-height:12pt; font-weight : normal" id = "short-days">(Mon, Wed, Fri)</p>
+    <br><br><br><br><br><br>
+    
+    
+    
+    
+    
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v2b4487d741ca48dcbadcaf954e159fc61680799950996" integrity="sha512-D/jdE0CypeVxFadTejKGTzmwyV10c1pxZk/AqjJuZbaJwGMyNHY3q/mTPWqMUnFACfCTunhZUVcd4cV78dK1pQ==" data-cf-beacon='{"rayId":"7b5ffdf15ec8aaf3","version":"2023.3.0","r":1,"token":"b46dcc51bec74d4ab2e9390dc6cad485","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
+
+<script>
+
+    function otherFunc() {
+      
+$("#faxBox").hide();
+        $("#mobileBox").hide();
+
+  
+  if (($("#other").val()) === "Fax") {
+       
+      $("#faxBox").show();
+  }
+        
+     if (($("#other").val()) === "Mobile") {
+       
+      $("#mobileBox").show();
+  }     }
+   
+        
+function workdayFunc() {
+   
+      
+$("#workdaysbox").hide();
+   
+  
+  if (($("#workdayselect").val()) === "I work Mon-Fri") {
+       
+   
+  }
+        
+     if (($("#workdayselect").val()) === "I only work some days") {
+       
+      $("#workdaysbox").show();
+  }
+
+
+    }
+        
+    $("#formSubmit").click(function(){
+        
+        nameVal = $("#fullname").val();
+        roleVal = $("#role").val();
+        phoneVal = $("#phone").val();
+        addressVal = $("#streetaddress").val();
+        emailVal = $("#email").val();
+        
+          if (($("#other").val()) === "Fax") {
+       
+      faxVal = $("#otherFax").val();
+  }
+                  if (($("#other").val()) === "Mobile") {
+       
+    mobileVal = $("#mobileInput").val();
+  }
+
+       
+
+
+        $(".name-and-role").text(nameVal + " — " + roleVal);
+        $(".street-address").text(addressVal);
+        $(".phone-number").text("P: " + phoneVal);
+        $(".other-number").text("");
+        $(".days").text("");
+         $("#short-days").text("");   
+        $(".email-thing").text(emailVal)
+         $(".email-thing").attr("href", "mailto:"+emailVal);
+        $(".email-thing-outer").attr("href", "mailto:"+emailVal);
+        
+        $("#short-name").text(nameVal);
+        $("#short-role").text(roleVal);
+        
+        
+        
+if (($("#other").val()) === "Fax") {
+
+$(".other-number").text("F: " + faxVal);
+        
+    };
+        
+  if (($("#other").val()) === "Mobile") {
+
+$(".other-number").text("M: " + mobileVal);
+        
+    };
+     
+
+       if (($("#workdayselect").val()) === "I only work some days") {
+           
+           var daysworkedoutput = $.map($(':checkbox[name=workday]:checked'), function(n, i){
+      return n.value;
+}).join(', ');
+         
+           
+           if (daysworkedoutput === "Mon, Tue, Wed, Thu, Fri") {
+                $(".days").text("");
+               $("#short-days").text("");
+                          }
+           
+           else {
+            $(".days").text("(" + daysworkedoutput + ")");
+             $("#short-days").text("(" + daysworkedoutput + ")")
+           
+           if ($(".days").text() === "()"){
+               $(".days").text("");
+               $("#short-days").text("");
+           }
+           }
+           
+       }
+        
+            
+       
+    })
+
+
+</script>
+
+ 
