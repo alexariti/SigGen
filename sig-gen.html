@@ -33,7 +33,19 @@
     <label for = "role">Role: </label><input type="text" id = "role" value = "Your role"><br><br>
 <label for = "phone">Phone: </label><input type="text" id = "phone" value = "+61 2 9262 6989"><br><br>
     
-<label for = "streetaddress">Address: </label><input type="text" id = "streetaddress" value = "Suite 8.02, 6 O'Connell St, Sydney 2000"><br><br>
+<label for="office">Address:</label>
+    <select id="office">
+        <option value="">--Select an address--</option>
+			<option value="Level 2, 37 St Georges Terrace, Boorloo/Perth WA 6000">Boorloo/Perth</option>
+            <option value="Ground floor, 21 Barry Drive, Turner ACT 2612">Canberra</option>
+            <option value="Suite 8.02, 6 O'Connell St, Gadi/Sydney NSW 2000">Gadi/Sydney</option>
+            <option value="2/98 Woods Street Garramilla/Darwin NT 0800">Garramilla/Darwin</option>
+			<option value="Room 3, 67 Greenslopes St, Gimuy/Edge Hill QLD 4870">Gimuy/Cairns</option>
+            <option value="3/28 Donkin Street, Meanjin/West End QLD 4101">Meanjin/Brisbane</option>
+			<option value="Level 17, 1 Nicholson St, Naarm/East Melbourne VIC 3000">Naarm/Melbourne</option>
+			<option value="Highfield House, Suite 1-6, 1/114 Bathurst St nipaluna/Hobart TAS 7000">nipaluna/Hobart</option>
+            <option value="Flinders University Campus, Level 1, 182 Victoria Square, Tartanya/Adelaide SA 5000">Tartanya/Adelaide</option>
+    </select><br><br>
     
     <label for = "email">Email: </label><input type="text" id = "email" value = "youremail@edo.org.au"><br><br>
     
@@ -44,7 +56,6 @@
     
     <option id = "mobile">Mobile</option>
     <option id = "none">None</option>
-    <option id = "fax" >Fax</option>
     
     </select>        <br><br>
     
@@ -79,17 +90,19 @@
    
     
     
-    <div id = "pronounBox">
-        <p>Would you like to specify a pronoun in your signature? <a href = "https://lgbt.ucsf.edu/signature-samples" style = "font-size: 8pt" target = "_blank">Learn more</a></p> 
-    <input class = "pronounselect" type = "checkbox" name = "pronoun" value = "she/her" style = "width: 30px;"/>She/her<br>
-    <input class = "pronounselect" type = "checkbox" name = "pronoun" value = "he/his" style = "width: 30px;"/>He/his<br>
-    <input class = "pronounselect" type = "checkbox" name = "pronoun" value = "they/their" style = "width: 30px;"/>They/their<br>
-    <!-- input class = "pronounselect" type = "checkbox" name = "pronoun" value = "noPronoun" style = "width: 30px;"/>I prefer not to specify in my email signature<br
-    <div class = "pronounAppear" style = "display:none;">
-    <p>How it will appear in your signature:</p>
-    <p style = "font-weight: bold; font-size: 8pt">I use <span class = "pronounSelected"></span> pronouns.</p> 
-        </div>-->
-    </div>
+    <div id="pronounBox">
+        <p>Would you like to specify a pronoun in your signature? <a href="https://lgbt.ucsf.edu/signature-samples" style="font-size: 8pt" target="_blank">Learn more</a></p> 
+        <input class="pronounselect" type="checkbox" name="pronoun" value="she/her" style="width: 30px;"/>She/her<br>
+        <input class="pronounselect" type="checkbox" name="pronoun" value="he/his" style="width: 30px;"/>He/his<br>
+        <input class="pronounselect" type="checkbox" name="pronoun" value="they/their" style="width: 30px;"/>They/their<br>
+        <input class="pronounselect" type="checkbox" name="pronoun" value="other" style="width: 30px;"/>Other:
+        <input class="pronounselect" type="text" id="otherPronounInput" name="otherpronoun" value="" style="width: 150px;"><br>
+        <div class="pronounAppear" style="display:none;">
+          <p>How it will appear in your signature:</p>
+          <p style="font-weight: bold; font-size: 8pt">I use <span class="pronounSelected"></span> pronouns.</p> 
+        </div>
+      </div>
+      
 
     
     <script> 
@@ -170,7 +183,7 @@
      <tr style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;width: 400px; margin: 0px; padding: 0px; display:none;" cellpadding = "0" width = "400" cellspacing = "0" class = "pronounAppear">
     <td style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;width: 400px; padding: 0px 0px 0px 0px;margin:0px ;" cellpadding = "0" width = "400" cellspacing = "0">
   <p style = "font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif; font-size: 10pt; margin: 0px 0px 0px 0px; padding:0px;">
-  I use <span class = "pronounSelected">she/her</span> pronouns.
+  I use <span class = "pronounSelected">she/her</span> pronouns. 
 </p>
 </td>
 
@@ -263,7 +276,7 @@ $("#workdaysbox").hide();
         nameVal = $("#fullname").val();
         roleVal = $("#role").val();
         phoneVal = $("#phone").val();
-        addressVal = $("#streetaddress").val();
+        addressVal = $("#office").val();
         emailVal = $("#email").val();
         
           if (($("#other").val()) === "Fax") {
